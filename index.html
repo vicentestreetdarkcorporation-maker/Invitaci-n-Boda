@@ -133,11 +133,11 @@
         </div>
       </section>
 
-      <!-- FOTO 2 (independiente) -->
+      <!-- FOTO 2 (independiente) – CORREGIDA A IMG_2.jpg -->
       <section class="foto-separada">
         <div class="foto-marco">
-          <a href="#" class="foto-link" data-lightbox="IMG_8.jpg" data-title="Siempre juntos">
-            <img src="IMG_8.jpg" alt="Foto 2">
+          <a href="#" class="foto-link" data-lightbox="IMG_2.jpg" data-title="Siempre juntos">
+            <img src="IMG_2.jpg" alt="Foto 2">
           </a>
           <p class="pie-foto">Siempre juntos</p>
         </div>
@@ -228,14 +228,20 @@
         </div>
       </section>
 
-      <!-- REGALOS -->
+      <!-- REGALOS (con dos QR: Yape y Plin) -->
       <section class="section-card">
         <h2><i class="fas fa-gift"></i> Regalos</h2>
         <div class="content">
-          <p>El mejor regalo es que estés presente en este día tan esperado. Si deseas tener un detalle con nosotros, escanea el siguiente código QR.</p>
-          <div class="qr-container">
-            <img src="QR.png" alt="QR para regalos">
-            <p class="qr-leyenda">Escanea para ver el Yape</p>
+          <p>El mejor regalo es que estés presente en este día tan esperado. Si deseas tener un detalle con nosotros, escanea el código QR correspondiente.</p>
+          <div class="qr-row">
+            <div class="qr-container">
+              <img src="QR.png" alt="QR para Yape">
+              <p class="qr-leyenda">Escanea para Yape</p>
+            </div>
+            <div class="qr-container">
+              <img src="QR_PLIN.png" alt="QR para Plin">
+              <p class="qr-leyenda">Escanea para Plin</p>
+            </div>
           </div>
         </div>
       </section>
@@ -257,7 +263,8 @@
           <p>Sube tus fotos a nuestro álbum compartido y revive los mejores momentos.</p>
           <div class="flex-center">
             <button class="btn-gold" id="btn-qr"><i class="fas fa-qrcode"></i> Ver QR</button>
-            <a href="#" id="btn-subir-fotos" class="btn-outline-gold" target="_blank"><i class="fas fa-upload"></i> Subir fotos</a>
+            <!-- Enlace corregido al drive -->
+            <a href="https://drive.google.com/drive/folders/1P8HJeuU_tkDwH_s7XczKHANOZRnD0mOd?usp=sharing" id="btn-subir-fotos" class="btn-outline-gold" target="_blank"><i class="fas fa-upload"></i> Subir fotos</a>
           </div>
         </div>
       </section>
@@ -340,13 +347,13 @@
           <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Estacionamiento:</strong> El local cuenta con estacionamiento limitado.</li>
           <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Fotografía:</strong> No olvides tu cámara o celular para capturar los mejores momentos.</li>
           <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Confirmación:</strong> Si aún no confirmas tu asistencia, hazlo cuanto antes para ayudarnos con la organización.</li>
-          <li style="padding:10px 0;">✅ <strong>Regalos:</strong> Si deseas obsequiarnos algo, revisa la sección de "Regalos" con nuestro QR.</li>
+          <li style="padding:10px 0;">✅ <strong>Regalos:</strong> Si deseas obsequiarnos algo, revisa la sección de "Regalos" con nuestros QR.</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- MODAL QR COMPARTIR -->
+  <!-- MODAL QR COMPARTIR (corregido el enlace) -->
   <div class="modal-overlay" id="modal-qr">
     <div class="modal-box">
       <button class="close-modal" data-modal="modal-qr">&times;</button>
@@ -354,10 +361,10 @@
       <div class="modal-body">
         <p>Escanea el QR o usa el botón para subir tus fotos a nuestro álbum.</p>
         <div class="qr-placeholder">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://drive.google.com/drive/folders/ejemplo" alt="Código QR">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1P8HJeuU_tkDwH_s7XczKHANOZRnD0mOd%3Fusp%3Dsharing" alt="Código QR">
         </div>
         <p style="font-size:0.85rem;opacity:0.7;">El QR te llevará a una carpeta de Google Drive donde podrás ver y subir fotos.</p>
-        <a href="https://drive.google.com/drive/folders/1P8HJeuU_tkDwH_s7XczKHANOZRnD0mOd" target="_blank" class="btn-gold" style="display:inline-block;text-decoration:none;color:#fff;margin-top:8px;">
+        <a href="https://drive.google.com/drive/folders/1P8HJeuU_tkDwH_s7XczKHANOZRnD0mOd?usp=sharing" target="_blank" class="btn-gold" style="display:inline-block;text-decoration:none;color:#fff;margin-top:8px;">
           <i class="fas fa-upload"></i> Subir fotos al Drive
         </a>
       </div>
