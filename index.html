@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Boda de Yelsin & Rouz</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== EFECTO DE CARGA (corazón con lazo) ===== -->
+  <div id="loading-effect">
+    <div class="heart-loader">💝</div>
+  </div>
+
+  <!-- ===== CONFETI CANVAS ===== -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- ===== PANTALLA DE INICIO: SOBRE MINIMALISTA ===== -->
+  <div id="sobre-invitacion">
+    <div class="sobre-wrapper">
+      <div class="sobre">
+        <div class="sobre-borde"></div>
+        <div class="sobre-deco-top">
+          <span class="deco-line"></span>
+          <span class="deco-diamond">✦</span>
+          <span class="deco-line"></span>
+        </div>
+        <div class="cuerpo">
+          <div class="titulo-sobre">¡Nos Casamos!</div>
+          <div class="nombres-sobre">Yelsin &amp; Rouz</div>
+          <div class="fecha-sobre">08 · Agosto · 2026</div>
+          <button id="btn-ingresar" class="btn-ingresar">Ingresar <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="sobre-deco-bottom">
+          <span class="deco-line"></span>
+          <span class="deco-diamond">✦</span>
+          <span class="deco-line"></span>
+        </div>
+      </div>
+    </div>
+    <div class="sobre-sombra"></div>
+  </div>
+
+  <!-- ===== CONTROLES DE MÚSICA ===== -->
+  <div id="music-control">
+    <span class="music-label"><i class="fas fa-music"></i></span>
+    <button id="btn-music-toggle" title="Pausa / Play">
+      <i class="fas fa-pause"></i>
+    </button>
+  </div>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <div id="main-content" class="main-content">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="deco-icon">✦</div>
+      <h1>¡Nos <span>Casamos</span>!</h1>
+      <div class="names-lg">Yelsin &amp; Rouz</div>
+      <div class="date-lg">🗓️ 08 de Agosto de 2026 · Sábado</div>
+      <div class="verse">
+        “Llegó el día, nuestra oración contestada por Dios nuestro Padre, llegaste a mi vida y yo a la tuya de una forma extraordinaria, nuestro anhelo es amarnos con el amor que viene de Dios, ese que es paciente, bondadoso y eterno.”
+        <br><strong style="display:block;margin-top:6px;">1 Corintios 13:4</strong>
+      </div>
+      <div class="parents">
+        <div>
+          <strong>Padres del novio</strong><br>
+          Marcelo P. Cordova Espinoza 🕊️<br>
+          Magdalena M. Huaricapcha Espinoza
+        </div>
+        <div>
+          <strong>Padres de la novia</strong><br>
+          Victor Ramos Chambi 🕊️<br>
+          Antonia Y. Carlos Alvarado
+        </div>
+        <div>
+          <strong>Padrinos</strong><br>
+          Gerson Contreras Angulo<br>
+          Bertha Ayala Rivera
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTADOR -->
+    <div class="container">
+      <section class="countdown-section">
+        <h2>Faltan para el gran día</h2>
+        <div class="countdown" id="countdown">
+          <div class="item"><div class="number" id="days">00</div><div class="label">Días</div></div>
+          <div class="item"><div class="number" id="hours">00</div><div class="label">Horas</div></div>
+          <div class="item"><div class="number" id="minutes">00</div><div class="label">Minutos</div></div>
+          <div class="item"><div class="number" id="seconds">00</div><div class="label">Segundos</div></div>
+        </div>
+      </section>
+
+      <!-- CEREMONIA Y RECEPCIÓN -->
+      <section class="section-card">
+        <h2><i class="fas fa-map-pin"></i> Ceremonia y Recepción</h2>
+        <div class="content">
+          <p><strong>Ceremonia:</strong> 12:00 P.M. &nbsp;|&nbsp; <strong>Recepción:</strong> 6:00 P.M.</p>
+          <p style="margin:8px 0;"><i class="fas fa-location-dot" style="color:#4a6a8f;"></i> Local “GOLDEN FEST EVENTOS Y RECEPCIONES”<br>Jr. Moquegua 244 - Chaupimarca - Pasco (al costado del ex Toyocenter)</p>
+          <div class="flex-center">
+            <button class="btn-gold" id="btn-mapa"><i class="fas fa-map"></i> Ver mapa</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOTO 1 (independiente) -->
+      <section class="foto-separada">
+        <div class="foto-marco">
+          <a href="#" class="foto-link" data-lightbox="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_1.png" data-title="Nuestro amor en cada mirada">
+            <img src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_1.png" alt="Foto 1">
+          </a>
+          <p class="pie-foto">Nuestro amor en cada mirada</p>
+        </div>
+      </section>
+
+      <!-- DRESSCODE -->
+      <section class="section-card">
+        <h2><i class="fas fa-tshirt"></i> Código de Vestimenta</h2>
+        <div class="content">
+          <p><strong>FORMAL</strong></p>
+          <p>Damas: Vestido largo<br>Caballeros: Traje formal</p>
+          <p style="font-size:0.9rem;opacity:0.7;">(Se reserva el color blanco y rosa para la novia)</p>
+          <div class="flex-center">
+            <button class="btn-gold" id="btn-dresscode"><i class="fas fa-camera"></i> Ver referencia</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOTO 2 (independiente) -->
+      <section class="foto-separada">
+        <div class="foto-marco">
+          <a href="#" class="foto-link" data-lightbox="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_2.png" data-title="Siempre juntos">
+            <img src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_2.png" alt="Foto 2">
+          </a>
+          <p class="pie-foto">Siempre juntos</p>
+        </div>
+      </section>
+
+      <!-- TIPS Y NOTAS -->
+      <section class="section-card">
+        <h2><i class="fas fa-lightbulb"></i> Tips y Notas</h2>
+        <div class="content">
+          <p>Algunas recomendaciones para que disfrutes al máximo de nuestra celebración.</p>
+          <div class="flex-center">
+            <button class="btn-gold" id="btn-tips"><i class="fas fa-list-check"></i> Ver tips</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CARRUSEL (fotos 3, 4, 6, 7) ===== -->
+      <section class="section-card">
+        <h2><i class="fas fa-images"></i> Nuestros Momentos</h2>
+        <div class="carrusel-grid">
+          <div class="carrusel-item" data-src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_3.png" data-title="Un sueño hecho realidad">
+            <img src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_3.png" alt="Un sueño hecho realidad">
+          </div>
+          <div class="carrusel-item" data-src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_4.png" data-title="El comienzo de nuestra historia">
+            <img src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_4.png" alt="El comienzo de nuestra historia">
+          </div>
+          <div class="carrusel-item" data-src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_6.PNG" data-title="Amor sin límites">
+            <img src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_6.PNG" alt="Amor sin límites">
+          </div>
+          <div class="carrusel-item" data-src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_7.PNG" data-title="Construyendo un sueño">
+            <img src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_7.PNG" alt="Construyendo un sueño">
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ITINERARIO – LÍNEA DE TIEMPO ===== -->
+      <section class="section-card itinerario-card">
+        <h2><i class="fas fa-clock"></i> Cronograma</h2>
+        <div class="timeline">
+          <!-- ítem 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">12:00 pm</span>
+              <span class="timeline-activity">Ceremonia Religiosa</span>
+            </div>
+          </div>
+          <!-- ítem 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">4:00 pm</span>
+              <span class="timeline-activity">Ceremonia Central</span>
+            </div>
+          </div>
+          <!-- ítem 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">5:00 pm</span>
+              <span class="timeline-activity">Baile de Novios</span>
+            </div>
+          </div>
+          <!-- ítem 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">5:30 pm</span>
+              <span class="timeline-activity">Brindis</span>
+            </div>
+          </div>
+          <!-- ítem 5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">6:00 pm</span>
+              <span class="timeline-activity">Cena</span>
+            </div>
+          </div>
+          <!-- ítem 6 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">7:00 pm</span>
+              <span class="timeline-activity">Fiesta</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REGALOS -->
+      <section class="section-card">
+        <h2><i class="fas fa-gift"></i> Regalos</h2>
+        <div class="content">
+          <p>El mejor regalo es que estés presente en este día tan esperado. Si deseas tener un detalle con nosotros, escanea el siguiente código QR.</p>
+          <div class="qr-container">
+            <img src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\QR.png" alt="QR para regalos">
+            <p class="qr-leyenda">Escanea para ver el Yape</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOTO 5 (independiente) -->
+      <section class="foto-separada">
+        <div class="foto-marco">
+          <a href="#" class="foto-link" data-lightbox="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_5.PNG" data-title="Amor eterno">
+            <img src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\IMG_5.PNG" alt="Foto 5">
+          </a>
+          <p class="pie-foto">Amor eterno</p>
+        </div>
+      </section>
+
+      <!-- COMPARTIR FOTOS -->
+      <section class="section-card">
+        <h2><i class="fas fa-share-nodes"></i> Compartimos este día junto a ti</h2>
+        <div class="content">
+          <p>Sube tus fotos a nuestro álbum compartido y revive los mejores momentos.</p>
+          <div class="flex-center">
+            <button class="btn-gold" id="btn-qr"><i class="fas fa-qrcode"></i> Ver QR</button>
+            <a href="#" id="btn-subir-fotos" class="btn-outline-gold" target="_blank"><i class="fas fa-upload"></i> Subir fotos</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONFIRMACIÓN -->
+      <section class="section-card">
+        <h2><i class="fas fa-check-circle"></i> Confirmación de asistencia</h2>
+        <div class="content">
+          <p>Tu presencia es muy importante para nosotros. Por favor, confírmanos tu asistencia lo antes posible.</p>
+          <div class="flex-center">
+            <button class="btn-gold" id="btn-confirmar"><i class="fas fa-pen-to-square"></i> Confirmar aquí</button>
+          </div>
+          <div style="margin-top:18px;font-size:0.9rem;background:rgba(255,255,240,0.6);padding:14px 20px;border-radius:30px;border:1px solid rgba(74,106,143,0.3);">
+            <i class="fab fa-whatsapp" style="color:#25d366; font-size:1.2rem;"></i>
+            <strong>Contáctanos por WhatsApp:</strong>
+            <a href="https://wa.me/51975531473" target="_blank" style="color:#2c4a66;text-decoration:none;font-weight:600;">+51 975 531 473</a>
+          </div>
+        </div>
+      </section>
+
+      <footer style="text-align:center;padding:30px 0 60px;color:#2c4a66;font-size:0.9rem;opacity:0.7;">
+        <p>Con mucha ilusión queremos vivir este momento rodeados de personas que han formado parte de nuestra historia. Será un honor contar con tu presencia.</p>
+        <p style="margin-top:8px;">¡Te esperamos! 💕</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ===== LIGHTBOX CON NAVEGACIÓN ===== -->
+  <div id="lightbox" class="lightbox-overlay">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Foto ampliada">
+      <p id="lightbox-title" class="lightbox-title"></p>
+    </div>
+  </div>
+
+  <!-- ===== MODALES ===== -->
+
+  <!-- MODAL MAPA -->
+  <div class="modal-overlay" id="modal-mapa">
+    <div class="modal-box">
+      <button class="close-modal" data-modal="modal-mapa">&times;</button>
+      <h2><i class="fas fa-map"></i> Cómo llegar</h2>
+      <div class="modal-body">
+        <p><strong>Dirección:</strong><br>Jr. Moquegua 244 - Chaupimarca - Pasco (al costado del ex Toyocenter)</p>
+        <p style="margin:12px 0;"><strong>Referencia:</strong> Local “GOLDEN FEST EVENTOS Y RECEPCIONES”</p>
+        <a href="https://maps.app.goo.gl/1AiAxMkiicKdHnn77" target="_blank" class="btn-gold" style="display:inline-block;text-decoration:none;color:#fff;">
+          <i class="fas fa-arrow-right"></i> Abrir en Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DRESSCODE -->
+  <div class="modal-overlay" id="modal-dresscode">
+    <div class="modal-box">
+      <button class="close-modal" data-modal="modal-dresscode">&times;</button>
+      <h2><i class="fas fa-tshirt"></i> Código de Vestimenta</h2>
+      <div class="modal-body">
+        <p><strong>FORMAL</strong></p>
+        <p>Damas: Vestido largo<br>Caballeros: Traje formal</p>
+        <p style="opacity:0.7;">(Se reserva el color blanco y rosa para la novia)</p>
+        <img src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Img\VESTIMENTA.png" alt="Referencia de vestimenta">
+        <p style="font-size:0.8rem;opacity:0.6;margin-top:6px;">Referencia de estilo formal</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL TIPS -->
+  <div class="modal-overlay" id="modal-tips">
+    <div class="modal-box">
+      <button class="close-modal" data-modal="modal-tips">&times;</button>
+      <h2><i class="fas fa-list-check"></i> Tips y Recomendaciones</h2>
+      <div class="modal-body">
+        <ul style="list-style:none;padding:0;">
+          <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Puntualidad:</strong> Llegar 15 minutos antes para ubicarse cómodamente.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Clima:</strong> La ceremonia es en un local cerrado pero por el clima de la ciudad se recomienda portar una casaca o abrigo.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Estacionamiento:</strong> El local cuenta con estacionamiento limitado.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Fotografía:</strong> No olvides tu cámara o celular para capturar los mejores momentos.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Confirmación:</strong> Si aún no confirmas tu asistencia, hazlo cuanto antes para ayudarnos con la organización.</li>
+          <li style="padding:10px 0;">✅ <strong>Regalos:</strong> Si deseas obsequiarnos algo, revisa la sección de "Regalos" con nuestro QR.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL QR COMPARTIR -->
+  <div class="modal-overlay" id="modal-qr">
+    <div class="modal-box">
+      <button class="close-modal" data-modal="modal-qr">&times;</button>
+      <h2><i class="fas fa-qrcode"></i> Comparte tus fotos</h2>
+      <div class="modal-body">
+        <p>Escanea el QR o usa el botón para subir tus fotos a nuestro álbum.</p>
+        <div class="qr-placeholder">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://drive.google.com/drive/folders/ejemplo" alt="Código QR">
+        </div>
+        <p style="font-size:0.85rem;opacity:0.7;">El QR te llevará a una carpeta de Google Drive donde podrás ver y subir fotos.</p>
+        <a href="https://drive.google.com/drive/folders/ejemplo" target="_blank" class="btn-gold" style="display:inline-block;text-decoration:none;color:#fff;margin-top:8px;">
+          <i class="fas fa-upload"></i> Subir fotos al Drive
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CONFIRMACIÓN -->
+  <div class="modal-overlay" id="modal-confirmar">
+    <div class="modal-box">
+      <button class="close-modal" data-modal="modal-confirmar">&times;</button>
+      <h2><i class="fas fa-pen-to-square"></i> Confirmación de asistencia</h2>
+      <div class="modal-body">
+        <p style="margin-bottom:20px;">Para confirmar tu asistencia, completa el siguiente formulario en Google Forms.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7KBz2SipXhy0nQtdAN1n9hJyHww94C8NBN8mj5-F44PgFTg/viewform?usp=publish-editor" target="_blank" class="btn-gold" style="display:inline-flex;text-decoration:none;color:#fff;font-size:1.1rem;padding:14px 35px;">
+          <i class="fas fa-external-link-alt"></i> Abrir formulario
+        </a>
+        <p style="margin-top:16px;font-size:0.85rem;opacity:0.6;">Serás redirigido a Google Forms. ¡Gracias por tu respuesta!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== AUDIO ===== -->
+  <audio id="bg-music" loop>
+    <source src="D:\JORGE\PRAGRAMACIONES\INVITACION NATURALEZA\Eres mi Milagro - Rolando Ramos (Video Oficial).mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
