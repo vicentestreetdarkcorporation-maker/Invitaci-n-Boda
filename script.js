@@ -106,10 +106,10 @@
         });
     });
 
-    // --- BOTÓN SUBIR FOTOS ---
+    // --- BOTÓN SUBIR FOTOS (corregido con la URL del drive) ---
     document.getElementById('btn-subir-fotos').addEventListener('click', function(e) {
         e.preventDefault();
-        window.open('https://drive.google.com/drive/folders/ejemplo', '_blank');
+        window.open('https://drive.google.com/drive/folders/1P8HJeuU_tkDwH_s7XczKHANOZRnD0mOd?usp=sharing', '_blank');
     });
 
     // --- CONFETI ---
