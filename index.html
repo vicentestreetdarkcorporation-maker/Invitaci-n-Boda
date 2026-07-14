@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 
   <!-- ===== META TAGS PARA COMPARTIR EN WHATSAPP / REDES ===== -->
-  <!-- Título que se verá en la tarjeta -->
   <meta property="og:title" content="Nuestra Boda - Yelsin & Rouz" />
-  <!-- Descripción breve -->
   <meta property="og:description" content="¡Nos casamos! Te invitamos a celebrar nuestro amor. Conoce todos los detalles de la ceremonia, recepción, código de vestimenta y más. ¡Te esperamos!" />
 
   <!-- ===== IMAGEN PARA COMPARTIR (URL ABSOLUTA) ===== -->
@@ -18,21 +16,17 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/jpeg" />
 
-  <!-- URL absoluta de la página -->
   <meta property="og:url" content="https://vicentestreetdarkcorporation-maker.github.io/Nuestra-Boda---Yelsin-y-Rouz/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Invitación de Boda - Yelsin & Rouz" />
 
-  <!-- Para Twitter (también usa Open Graph) -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Boda de Yelsin & Rouz" />
   <meta name="twitter:description" content="¡Nos casamos! Te invitamos a celebrar nuestro amor el 08 de Agosto de 2026." />
   <meta name="twitter:image" content="https://vicentestreetdarkcorporation-maker.github.io/Nuestra-Boda---Yelsin-y-Rouz/IMG_5.jpg?v=1" />
 
-  <!-- Imagen de respaldo para algunos clientes -->
   <link rel="image_src" href="https://vicentestreetdarkcorporation-maker.github.io/Nuestra-Boda---Yelsin-y-Rouz/IMG_5.jpg?v=1" />
 
-  <!-- Color de la barra del navegador -->
   <meta name="theme-color" content="#f2f0eb" />
 
   <title>Nuestra Boda - Yelsin & Rouz</title>
@@ -44,6 +38,390 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- ... (el resto del contenido es idéntico al que ya tenías, solo cambian las meta etiquetas de arriba) ... -->
+
+  <!-- ===== EFECTO DE CARGA (corazón con lazo) ===== -->
+  <div id="loading-effect">
+    <div class="heart-loader">💝</div>
+  </div>
+
+  <!-- ===== CONFETI CANVAS ===== -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- ===== PANTALLA DE INICIO: SOBRE MINIMALISTA ===== -->
+  <div id="sobre-invitacion">
+    <div class="sobre-wrapper">
+      <div class="sobre">
+        <div class="sobre-borde"></div>
+        <div class="sobre-deco-top">
+          <span class="deco-line"></span>
+          <span class="deco-diamond">✦</span>
+          <span class="deco-line"></span>
+        </div>
+        <div class="cuerpo">
+          <div class="titulo-sobre">¡Nos Casamos!</div>
+          <div class="nombres-sobre">Yelsin &amp; Rouz</div>
+          <div class="fecha-sobre">08 · Agosto · 2026</div>
+          <button id="btn-ingresar" class="btn-ingresar">Ingresar <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="sobre-deco-bottom">
+          <span class="deco-line"></span>
+          <span class="deco-diamond">✦</span>
+          <span class="deco-line"></span>
+        </div>
+      </div>
+    </div>
+    <div class="sobre-sombra"></div>
+  </div>
+
+  <!-- ===== CONTROLES DE MÚSICA ===== -->
+  <div id="music-control">
+    <span class="music-label"><i class="fas fa-music"></i></span>
+    <button id="btn-music-toggle" title="Pausa / Play">
+      <i class="fas fa-pause"></i>
+    </button>
+  </div>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <div id="main-content" class="main-content">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="deco-icon">✦</div>
+      <h1>¡Nos <span>Casamos</span>!</h1>
+      <div class="names-lg">Yelsin &amp; Rouz</div>
+      <div class="date-lg">🗓️ 08 de Agosto de 2026 · Sábado</div>
+      <div class="verse">
+        “Todo lo hizo hermoso en su tiempo”
+        <br><strong style="display:block;margin-top:6px;">Eclesiastes 3:11</strong>
+      </div>
+      <div class="parents">
+        <div>
+          <strong>Padres del novio</strong><br>
+          Marcelo P. Cordova Espinoza 🕊️<br>
+          Magdalena M. Huaricapcha Espinoza
+        </div>
+        <div>
+          <strong>Padres de la novia</strong><br>
+          Victor Ramos Chambi 🕊️<br>
+          Antonia Y. Carlos Alvarado
+        </div>
+        <div>
+          <strong>Padrinos</strong><br>
+          Gerson Contreras Angulo<br>
+          Bertha Ayala Rivera
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTADOR -->
+    <div class="container">
+      <section class="countdown-section">
+        <h2>Faltan para el gran día</h2>
+        <div class="countdown" id="countdown">
+          <div class="item"><div class="number" id="days">00</div><div class="label">Días</div></div>
+          <div class="item"><div class="number" id="hours">00</div><div class="label">Horas</div></div>
+          <div class="item"><div class="number" id="minutes">00</div><div class="label">Minutos</div></div>
+          <div class="item"><div class="number" id="seconds">00</div><div class="label">Segundos</div></div>
+        </div>
+      </section>
+
+      <!-- CEREMONIA Y RECEPCIÓN -->
+      <section class="section-card">
+        <h2><i class="fas fa-map-pin"></i> Ceremonia y Recepción</h2>
+        <div class="content">
+          <p><strong>Ceremonia:</strong> 12:00 P.M. Iglesia Filadelfia &nbsp;|&nbsp; <strong>Recepción:</strong> 4:00 P.M.</p>
+          <p style="margin:8px 0;"><i class="fas fa-location-dot" style="color:#4a6a8f;"></i> Local “GOLDEN FEST EVENTOS Y RECEPCIONES”<br>Jr. Moquegua 244 - Chaupimarca - Pasco (al costado del ex Toyocenter)</p>
+          <div class="flex-center">
+            <button class="btn-gold" id="btn-mapa"><i class="fas fa-map"></i> Ver mapa</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOTO 1 -->
+      <section class="foto-separada">
+        <div class="foto-marco">
+          <a href="#" class="foto-link" data-lightbox="IMG_1.jpg" data-title="Nuestro amor en cada mirada">
+            <img src="IMG_1.jpg" alt="Foto 1">
+          </a>
+          <p class="pie-foto">Nuestro amor en cada mirada</p>
+        </div>
+      </section>
+
+      <!-- DRESSCODE -->
+      <section class="section-card">
+        <h2><i class="fas fa-tshirt"></i> Código de Vestimenta</h2>
+        <div class="content">
+          <p><strong>FORMAL</strong></p>
+          <p>Damas: Vestido largo<br>Caballeros: Traje formal</p>
+          <p style="font-size:0.9rem;opacity:0.7;">(Se reserva el color blanco y rosa para la novia)</p>
+          <div class="flex-center">
+            <button class="btn-gold" id="btn-dresscode"><i class="fas fa-camera"></i> Ver referencia</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOTO 2 -->
+      <section class="foto-separada">
+        <div class="foto-marco">
+          <a href="#" class="foto-link" data-lightbox="IMG_8.jpg" data-title="Siempre juntos">
+            <img src="IMG_8.jpg" alt="Foto 2">
+          </a>
+          <p class="pie-foto">Siempre juntos</p>
+        </div>
+      </section>
+
+      <!-- TIPS Y NOTAS -->
+      <section class="section-card">
+        <h2><i class="fas fa-lightbulb"></i> Tips y Notas</h2>
+        <div class="content">
+          <p>Algunas recomendaciones para que disfrutes al máximo de nuestra celebración.</p>
+          <div class="flex-center">
+            <button class="btn-gold" id="btn-tips"><i class="fas fa-list-check"></i> Ver tips</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARRUSEL (fotos 3, 4, 6, 7) -->
+      <section class="section-card">
+        <h2><i class="fas fa-images"></i> Nuestros Momentos</h2>
+        <div class="carrusel-grid">
+          <div class="carrusel-item" data-src="IMG_3.jpg" data-title="Un sueño hecho realidad">
+            <img src="IMG_3.jpg" alt="Un sueño hecho realidad">
+          </div>
+          <div class="carrusel-item" data-src="IMG_4.jpg" data-title="El comienzo de nuestra historia">
+            <img src="IMG_4.jpg" alt="El comienzo de nuestra historia">
+          </div>
+          <div class="carrusel-item" data-src="IMG_6.jpg" data-title="Amor sin límites">
+            <img src="IMG_6.jpg" alt="Amor sin límites">
+          </div>
+          <div class="carrusel-item" data-src="IMG_7.jpg" data-title="Construyendo un sueño">
+            <img src="IMG_7.jpg" alt="Construyendo un sueño">
+          </div>
+        </div>
+      </section>
+
+      <!-- ITINERARIO -->
+      <section class="section-card">
+        <h2><i class="fas fa-clock"></i> Cronograma</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">12:00 pm</span>
+              <span class="timeline-activity">Ceremonia Religiosa (Iglesia Filadelfia)</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">4:00 pm</span>
+              <span class="timeline-activity">Ceremonia Central</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">5:00 pm</span>
+              <span class="timeline-activity">Baile de Novios</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">5:30 pm</span>
+              <span class="timeline-activity">Brindis</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">6:00 pm</span>
+              <span class="timeline-activity">Cena</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">7:00 pm</span>
+              <span class="timeline-activity">Fiesta</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REGALOS (con dos QR) -->
+      <section class="section-card">
+        <h2><i class="fas fa-gift"></i> Regalos</h2>
+        <div class="content">
+          <p>El mejor regalo es que estés presente en este día tan esperado. Si deseas tener un detalle con nosotros, escanea el código QR correspondiente.</p>
+          <div class="qr-row">
+            <div class="qr-container">
+              <img src="QR.png" alt="QR para Yape">
+              <p class="qr-leyenda">Escanea para Yape</p>
+            </div>
+            <div class="qr-container">
+              <img src="PLIN.jpeg" alt="QR para Plin">
+              <p class="qr-leyenda">Escanea para Plin</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOTO 5 -->
+      <section class="foto-separada">
+        <div class="foto-marco">
+          <a href="#" class="foto-link" data-lightbox="IMG_5.jpg" data-title="Amor eterno">
+            <img src="IMG_5.jpg" alt="Foto 5">
+          </a>
+          <p class="pie-foto">Amor eterno</p>
+        </div>
+      </section>
+
+      <!-- COMPARTIR FOTOS -->
+      <section class="section-card">
+        <h2><i class="fas fa-share-nodes"></i> Compartimos este día junto a ti</h2>
+        <div class="content">
+          <p>Sube tus fotos a nuestro álbum compartido y revive los mejores momentos.</p>
+          <div class="flex-center">
+            <button class="btn-gold" id="btn-qr"><i class="fas fa-qrcode"></i> Ver QR</button>
+            <a href="https://drive.google.com/drive/folders/1P8HJeuU_tkDwH_s7XczKHANOZRnD0mOd?usp=sharing" id="btn-subir-fotos" class="btn-outline-gold" target="_blank"><i class="fas fa-upload"></i> Subir fotos</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONFIRMACIÓN -->
+      <section class="section-card">
+        <h2><i class="fas fa-check-circle"></i> Confirmación de asistencia</h2>
+        <div class="content">
+          <p>Tu presencia es muy importante para nosotros. Por favor, confírmanos tu asistencia lo antes posible.</p>
+          <div class="flex-center">
+            <button class="btn-gold" id="btn-confirmar"><i class="fas fa-pen-to-square"></i> Confirmar aquí</button>
+          </div>
+
+          <div style="margin-top:18px;background:rgba(255,255,240,0.6);padding:18px 20px;border-radius:30px;border:1px solid rgba(74,106,143,0.3);">
+            <p style="margin-bottom:12px;font-size:1rem;">
+              <i class="fab fa-whatsapp" style="color:#25d366; font-size:1.4rem;"></i>
+              <strong>Contáctanos por WhatsApp:</strong>
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+              <a href="https://wa.me/51975531473" target="_blank" class="btn-outline-gold" style="text-decoration:none; min-width:200px; justify-content:center;">
+                <i class="fab fa-whatsapp"></i> +51 975 531 473
+              </a>
+              <a href="https://wa.me/51920147315" target="_blank" class="btn-outline-gold" style="text-decoration:none; min-width:200px; justify-content:center;">
+                <i class="fab fa-whatsapp"></i> +51 920 147 315
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer style="text-align:center;padding:30px 0 60px;color:#2c4a66;font-size:0.9rem;opacity:0.7;">
+        <p>Con mucha ilusión queremos vivir este momento rodeados de personas que han formado parte de nuestra historia. Será un honor contar con tu presencia.</p>
+        <p style="margin-top:8px;">¡Te esperamos! 💕</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ===== LIGHTBOX CON NAVEGACIÓN ===== -->
+  <div id="lightbox" class="lightbox-overlay">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Foto ampliada">
+      <p id="lightbox-title" class="lightbox-title"></p>
+    </div>
+  </div>
+
+  <!-- ===== MODALES ===== -->
+
+  <!-- MODAL MAPA -->
+  <div class="modal-overlay" id="modal-mapa">
+    <div class="modal-box">
+      <button class="close-modal" data-modal="modal-mapa">&times;</button>
+      <h2><i class="fas fa-map"></i> Cómo llegar</h2>
+      <div class="modal-body">
+        <p><strong>Dirección:</strong><br>Jr. Moquegua 244 - Chaupimarca - Pasco (al costado del ex Toyocenter)</p>
+        <p style="margin:12px 0;"><strong>Referencia:</strong> Local “GOLDEN FEST EVENTOS Y RECEPCIONES”</p>
+        <a href="https://maps.app.goo.gl/1AiAxMkiicKdHnn77" target="_blank" class="btn-gold" style="display:inline-block;text-decoration:none;color:#fff;">
+          <i class="fas fa-arrow-right"></i> Abrir en Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DRESSCODE -->
+  <div class="modal-overlay" id="modal-dresscode">
+    <div class="modal-box">
+      <button class="close-modal" data-modal="modal-dresscode">&times;</button>
+      <h2><i class="fas fa-tshirt"></i> Código de Vestimenta</h2>
+      <div class="modal-body">
+        <p><strong>FORMAL</strong></p>
+        <p>Damas: Vestido largo<br>Caballeros: Traje formal</p>
+        <p style="opacity:0.7;">(Se reserva el color blanco y rosa para la novia)</p>
+        <img src="VESTIMENTA.png" alt="Referencia de vestimenta">
+        <p style="font-size:0.8rem;opacity:0.6;margin-top:6px;">Referencia de estilo formal</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL TIPS -->
+  <div class="modal-overlay" id="modal-tips">
+    <div class="modal-box">
+      <button class="close-modal" data-modal="modal-tips">&times;</button>
+      <h2><i class="fas fa-list-check"></i> Tips y Recomendaciones</h2>
+      <div class="modal-body">
+        <ul style="list-style:none;padding:0;">
+          <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Puntualidad:</strong> Llegar 15 minutos antes para ubicarse cómodamente.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Clima:</strong> La ceremonia es en un local cerrado pero por el clima de la ciudad se recomienda portar una casaca o abrigo.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Estacionamiento:</strong> El local cuenta con estacionamiento limitado.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Fotografía:</strong> No olvides tu cámara o celular para capturar los mejores momentos.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #eee;">✅ <strong>Confirmación:</strong> Si aún no confirmas tu asistencia, hazlo cuanto antes para ayudarnos con la organización.</li>
+          <li style="padding:10px 0;">✅ <strong>Regalos:</strong> Si deseas obsequiarnos algo, revisa la sección de "Regalos" con nuestros QR.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL QR COMPARTIR -->
+  <div class="modal-overlay" id="modal-qr">
+    <div class="modal-box">
+      <button class="close-modal" data-modal="modal-qr">&times;</button>
+      <h2><i class="fas fa-qrcode"></i> Comparte tus fotos</h2>
+      <div class="modal-body">
+        <p>Escanea el QR o usa el botón para subir tus fotos a nuestro álbum.</p>
+        <div class="qr-placeholder">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1P8HJeuU_tkDwH_s7XczKHANOZRnD0mOd%3Fusp%3Dsharing" alt="Código QR">
+        </div>
+        <p style="font-size:0.85rem;opacity:0.7;">El QR te llevará a una carpeta de Google Drive donde podrás ver y subir fotos.</p>
+        <a href="https://drive.google.com/drive/folders/1P8HJeuU_tkDwH_s7XczKHANOZRnD0mOd?usp=sharing" target="_blank" class="btn-gold" style="display:inline-block;text-decoration:none;color:#fff;margin-top:8px;">
+          <i class="fas fa-upload"></i> Subir fotos al Drive
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CONFIRMACIÓN -->
+  <div class="modal-overlay" id="modal-confirmar">
+    <div class="modal-box">
+      <button class="close-modal" data-modal="modal-confirmar">&times;</button>
+      <h2><i class="fas fa-pen-to-square"></i> Confirmación de asistencia</h2>
+      <div class="modal-body">
+        <p style="margin-bottom:20px;">Para confirmar tu asistencia, completa el siguiente formulario en Google Forms.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9iY4UTg8lWQJCq1HOKxuPB80Y6r8zOCeNkR8aaKqCovwRkA/viewform?usp=publish-editor" target="_blank" class="btn-gold" style="display:inline-flex;text-decoration:none;color:#fff;font-size:1.1rem;padding:14px 35px;">
+          <i class="fas fa-external-link-alt"></i> Abrir formulario
+        </a>
+        <p style="margin-top:16px;font-size:0.85rem;opacity:0.6;">Serás redirigido a Google Forms. ¡Gracias por tu respuesta!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== AUDIO ===== -->
+  <audio id="bg-music" loop>
+    <source src="Eres mi Milagro - Rolando Ramos (Video Oficial).mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
