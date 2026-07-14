@@ -62,13 +62,12 @@
     actualizarContador();
     setInterval(actualizarContador, 1000);
 
-    // --- MODALES ---
+    // --- MODALES (solo los botones que existen) ---
     const modales = document.querySelectorAll('.modal-overlay');
     const botonesAbrir = {
         'btn-mapa': 'modal-mapa',
         'btn-dresscode': 'modal-dresscode',
         'btn-tips': 'modal-tips',
-        'btn-regalos': 'modal-regalos',
         'btn-qr': 'modal-qr',
         'btn-confirmar': 'modal-confirmar'
     };
@@ -106,7 +105,7 @@
         });
     });
 
-    // --- BOTÓN SUBIR FOTOS (corregido con la URL del drive) ---
+    // --- BOTÓN SUBIR FOTOS ---
     document.getElementById('btn-subir-fotos').addEventListener('click', function(e) {
         e.preventDefault();
         window.open('https://drive.google.com/drive/folders/1P8HJeuU_tkDwH_s7XczKHANOZRnD0mOd?usp=sharing', '_blank');
