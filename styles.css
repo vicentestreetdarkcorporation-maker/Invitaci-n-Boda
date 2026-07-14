@@ -522,8 +522,6 @@ h1, h2, h3 {
   padding-left: 40px;
   margin: 10px 0;
 }
-
-/* Línea vertical central */
 .timeline::before {
   content: '';
   position: absolute;
@@ -534,7 +532,6 @@ h1, h2, h3 {
   background: linear-gradient(to bottom, #4a6a8f, #b0c4d9);
   border-radius: 6px;
 }
-
 .timeline-item {
   position: relative;
   margin-bottom: 28px;
@@ -542,8 +539,6 @@ h1, h2, h3 {
   align-items: flex-start;
   gap: 18px;
 }
-
-/* Punto (círculo) */
 .timeline-dot {
   position: absolute;
   left: -29px;
@@ -557,12 +552,10 @@ h1, h2, h3 {
   z-index: 2;
   transition: background 0.3s, transform 0.3s;
 }
-
 .timeline-item:hover .timeline-dot {
   background: #4a6a8f;
   transform: scale(1.2);
 }
-
 .timeline-content {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(4px);
@@ -577,12 +570,10 @@ h1, h2, h3 {
   width: 100%;
   transition: background 0.3s, transform 0.2s;
 }
-
 .timeline-item:hover .timeline-content {
   background: rgba(255, 255, 255, 0.85);
   transform: translateX(6px);
 }
-
 .timeline-time {
   font-weight: 700;
   font-size: 1.2rem;
@@ -590,7 +581,6 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   min-width: 90px;
 }
-
 .timeline-activity {
   font-size: 1.05rem;
   color: #2c4a66;
@@ -822,7 +812,6 @@ h1, h2, h3 {
   #music-control { bottom: 16px; right: 16px; padding: 8px 12px 8px 16px; }
   #music-control button { font-size: 1.4rem; }
 
-  /* Timeline responsive */
   .timeline {
     padding-left: 30px;
   }
